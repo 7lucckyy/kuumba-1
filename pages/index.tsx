@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import HomeBookSharing from "../src/modules/home/components/HomeBookSharing";
+import HomeHero from "../src/modules/home/components/HomeHero";
 import HomeMicrotransaction from "../src/modules/home/components/HomeMicrotransaction";
 import HomeRoadMap from "../src/modules/home/components/HomeRoadMap";
 import HomeServices from "../src/modules/home/components/HomeServices";
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
     <Meta title="Kuumba | Home">
       <div className="px-32">
         <Header />
+        <HomeHero />
         <HomeServices />
         <MissionAndAim />
         <HomeMicrotransaction />
