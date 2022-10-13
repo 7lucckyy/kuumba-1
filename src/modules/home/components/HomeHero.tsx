@@ -8,14 +8,13 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
     <div className="flex items-center gap-24 py-32">
       <div className="w-full">
         <div className="flex flex-col gap-6">
-          <div>
-            <h2 className="text-5xl font-extrabold">Pay per page.</h2>
-            <h2 className="text-5xl font-extrabold">
-              Let&apos;s be honest, you don&apos;t always{" "}
+          <div className="font-extrabold header2 leading-[100px]">
+            <h2 className="leading-[70px]">
+              Pay per page. <br /> Let&apos;s be honest, you don&apos;t always{" "}
               <span className="text-primary">finish the book...</span>
             </h2>
           </div>
-          <p className="text-xl">
+          <p className="header6">
             The first SocialFi eBook platform dedicated to promoting lifelong
             reading and learning Globally
           </p>
@@ -46,7 +45,7 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-4 mt-20">
+        <div className="flex items-center gap-4 mt-28">
           <Image
             src="/img/george_martin.svg"
             alt="Image of George Martin"
@@ -54,28 +53,29 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
             height={75}
           />
           <div className="flex flex-col gap-1.5 leading-3">
-            <p className="text-sm font-medium leading-4">
+            <p className="leading-4 small-medium">
               &quot;A reader lives a thousand lives before he dies, said Jojen.
               A man who never reads lives only one&quot;
             </p>
-            <span className="text-xs text-gray-500">- George R. R. Martin</span>
+            <span className="text-gray-500 tiny">- George R. R. Martin</span>
           </div>
         </div>
       </div>
       <div className="w-full">
-        <div className="mockup-phone">
-          <div className="camera !w-36"></div>
-          <div className="display">
-            <div className="!w-64 !h-[550px] artboard artboard-demo phone-1">
-              <Image
-                src="/img/home_hero_main_mockup.svg"
-                alt="Main iphone mockup from home hero section"
-                width={256}
-                height={550}
-              />
-            </div>
-          </div>
-        </div>
+        <span className="relative top-16">
+          <Image
+            src="/img/mockups_light.svg"
+            alt="Iphone mockups light source"
+            width={75}
+            height={45}
+          />
+        </span>
+        <Image
+          src="/img/home_hero_mockups.svg"
+          alt="Iphone mockups from home hero section"
+          width={550}
+          height={550}
+        />
       </div>
     </div>
   );

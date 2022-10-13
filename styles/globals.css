@@ -14,8 +14,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -27,6 +25,58 @@ a {
   box-sizing: border-box;
 }
 
+.header1,
+.header2,
+.header3,
+.header4,
+.header5,
+.header6,
+.body-base,
+.body-medium,
+.small-base,
+.small-medium,
+.tiny,
+.pretext {
+  @apply normal-case;
+}
+
+.header1 {
+  @apply text-[56px];
+}
+.header2 {
+  @apply text-5xl;
+}
+.header3 {
+  @apply text-[40px];
+}
+.header4 {
+  @apply text-[32px];
+}
+.header5 {
+  @apply text-2xl;
+}
+.header6 {
+  @apply text-xl;
+}
+.body-base {
+  @apply text-base font-normal;
+}
+.body-medium {
+  @apply text-base font-medium;
+}
+.small-base {
+  @apply text-sm;
+}
+.small-medium {
+  @apply text-sm font-medium;
+}
+.tiny {
+  @apply text-xs;
+}
+.pretext {
+  @apply text-[10px];
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -36,4 +86,3 @@ a {
     background: black;
   }
 }
-

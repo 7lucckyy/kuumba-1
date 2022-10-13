@@ -6,7 +6,7 @@ interface HeaderProps {}
 const Header: FunctionComponent<HeaderProps> = () => {
   return (
     <div className="px-32 -mx-32 shadow shadow-gray-200">
-      <div className="flex justify-between py-4 mb-10">
+      <div className="flex justify-between py-4">
         <Link href="/">
           <a>
             <span className="text-2xl font-bold">
@@ -16,7 +16,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
             </span>
           </a>
         </Link>
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           <Link href="#">
             <a className="text-gray-500">About Us</a>
           </Link>
@@ -30,7 +30,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
             <a className="text-gray-500">Contact Us</a>
           </Link>
         </div>
-        <button className="font-medium normal-case btn btn-primary btn-sm">
+        <button className="btn btn-primary btn-sm body-medium">
           Request early access
         </button>
       </div>
