@@ -5,20 +5,18 @@ interface HomeHeroProps {}
 
 const HomeHero: FunctionComponent<HomeHeroProps> = () => {
   return (
-    <div className="flex items-center gap-24 py-32">
-      <div className="w-full">
+    <section className="flex items-center gap-24">
+      <div className="w-full lg:w-3/5">
         <div className="flex flex-col gap-6">
-          <div className="font-extrabold header2 leading-[100px]">
-            <h2 className="leading-[70px]">
-              Pay per page. <br /> Let&apos;s be honest, you don&apos;t always{" "}
-              <span className="text-primary">finish the book...</span>
-            </h2>
-          </div>
+          <h2 className="font-extrabold header2">
+            Pay per page. <br /> Let&apos;s be honest, you don&apos;t always{" "}
+            <span className="text-primary">finish the book...</span>
+          </h2>
           <p className="header6">
             The first SocialFi eBook platform dedicated to promoting lifelong
             reading and learning Globally
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
             <button className="btn btn-link !px-0">
               <Image
                 src="/img/appstore.svg"
@@ -45,7 +43,7 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-4 mt-28">
+        <div className="flex items-center gap-4 mt-12 sm:mt-16 md:mt-20 lg:mt-28">
           <Image
             src="/img/george_martin.svg"
             alt="Image of George Martin"
@@ -61,7 +59,7 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="hidden w-2/5 lg:block">
         <span className="relative top-16">
           <Image
             src="/img/mockups_light.svg"
@@ -77,7 +75,7 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
           height={550}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

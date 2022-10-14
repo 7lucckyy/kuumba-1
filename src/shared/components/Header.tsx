@@ -1,12 +1,22 @@
 import Link from "next/link";
 import { FunctionComponent } from "react";
+import Routes from "../constants/routes";
+import navItems from "../utils/nav_items";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useDrawerContext } from "../contexts/DrawerContext";
 
 interface HeaderProps {}
 
 const Header: FunctionComponent<HeaderProps> = () => {
+  const { toggleDrawer } = useDrawerContext();
+
   return (
-    <div className="px-32 -mx-32 shadow shadow-gray-200">
+    <header className="shadow horizontal-padding horizontal-margin shadow-gray-200">
       <div className="flex justify-between py-4">
+        <GiHamburgerMenu
+          className="inline-block text-3xl cursor-pointer lg:hidden"
+          onClick={toggleDrawer}
+        />
         <Link href="/">
           <a>
             <span className="text-2xl font-bold">
@@ -16,25 +26,23 @@ const Header: FunctionComponent<HeaderProps> = () => {
             </span>
           </a>
         </Link>
-        <div className="flex items-center gap-6">
-          <Link href="#">
-            <a className="text-gray-500">About Us</a>
-          </Link>
-          <Link href="#">
-            <a className="text-gray-500">Features</a>
-          </Link>
-          <Link href="#">
-            <a className="text-gray-500">Publish</a>
-          </Link>
-          <Link href="#">
-            <a className="text-gray-500">Contact Us</a>
-          </Link>
+        <div className="items-center hidden gap-6 lg:flex">
+          {navItems.map((link, index) => (
+            <Link key={index} href={link.route}>
+              <a className="text-gray-500 hover:text-info">{link.title}</a>
+            </Link>
+          ))}
         </div>
-        <button className="btn btn-primary btn-sm body-medium">
-          Request early access
-        </button>
+        <div className="items-center hidden gap-6 lg:flex">
+          <Link href={Routes.PUBLISH}>
+            <a className="btn btn-accent hover:text-primary-content btn-sm body-medium">Publish</a>
+          </Link>
+          <button className="btn btn-primary btn-sm body-medium">
+            Request early access
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 

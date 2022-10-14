@@ -13,6 +13,10 @@ const Meta: FunctionComponent<PropsWithChildren<MetaProps>> = ({
     <>
       <Head>
         <title>{title}</title>
+        <meta
+          name="description"
+          content="Empowering authors and readers"
+        />
       </Head>
 
       <>{children}</>

@@ -13,7 +13,7 @@ import Meta from "../src/shared/components/Meta";
 const Home: NextPage = () => {
   return (
     <Meta title="Kuumba | Home">
-      <div className="px-32">
+      <div className="flex flex-col w-full gap-16 horizontal-padding sm:gap-24 md:gap-30 lg:gap-36">
         <Header />
         <HomeHero />
         <HomeServices />

@@ -41,48 +41,57 @@ a {
 }
 
 .header1 {
-  @apply text-[56px];
-}
-.header2 {
-  @apply text-5xl;
-}
-.header3 {
-  @apply text-[40px];
-}
-.header4 {
-  @apply text-[32px];
-}
-.header5 {
-  @apply text-2xl;
-}
-.header6 {
-  @apply text-xl;
-}
-.body-base {
-  @apply text-base font-normal;
-}
-.body-medium {
-  @apply text-base font-medium;
-}
-.small-base {
-  @apply text-sm;
-}
-.small-medium {
-  @apply text-sm font-medium;
-}
-.tiny {
-  @apply text-xs;
-}
-.pretext {
-  @apply text-[10px];
+  @apply text-[40px] md:text-5xl 2xl:text-[56px];
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.header2 {
+  @apply md:text-[41px] text-[35px] 2xl:text-[48px];
+}
+
+.header3 {
+  @apply md:text-[34px] text-[29px] 2xl:text-[40px];
+}
+
+.header4 {
+  @apply md:text-[27px] text-[23px] 2xl:text-[32px];
+}
+
+.header5 {
+  @apply md:text-xl text-[17px] 2xl:text-2xl;
+}
+
+.header6 {
+  @apply text-[17px] lg:text-xl;
+}
+
+.body-base {
+  @apply text-[14px] lg:text-base font-normal;
+}
+
+.body-medium {
+  @apply text-[14px] lg:text-base font-medium;
+}
+
+.small-base {
+  @apply text-xs lg:text-sm;
+}
+
+.small-medium {
+  @apply text-xs lg:text-sm font-medium;
+}
+
+.tiny {
+  @apply text-[10px] lg:text-xs;
+}
+
+.pretext {
+  @apply text-[9px] lg:text-[10px];
+}
+
+.horizontal-padding {
+  @apply px-4 sm:px-7 md:px-[46px] lg:px-[77px] xl:px-32;
+}
+
+.horizontal-margin {
+  @apply -mx-4 sm:-mx-7 md:-mx-[46px] lg:-mx-[77px] xl:-mx-32;
 }
