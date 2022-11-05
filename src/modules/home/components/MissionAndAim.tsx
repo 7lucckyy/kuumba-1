@@ -4,7 +4,7 @@ interface MissionAndAimProps {}
 
 const MissionAndAim: FunctionComponent<MissionAndAimProps> = () => {
   return (
-    <section className="flex flex-col gap-8 px-4 lg:flex-row sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24 md:px-12 lg:px-20 xl:px-24">
+    <section className="flex flex-col gap-8 px-4 rounded-lg py-14 sm:py-20 md:py-24 lg:py-32 lg:flex-row sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24 md:px-12 lg:px-20 xl:px-24 bg-[#F5F6FF]">
       <div className="flex flex-col w-full gap-1 md:gap-3 lg:gap-5 xl:gap-6">
         <h2 className="font-bold header2">Our mission</h2>
         <p className="header6">

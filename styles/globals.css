@@ -88,6 +88,18 @@ a {
   @apply text-[9px] lg:text-[10px];
 }
 
+.custom-input {
+  @apply border-gray-300 input focus:border-primary input-sm sm:input-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm bg-transparent;
+}
+
+.custom-textarea {
+  @apply h-24 border-gray-300 textarea focus:border-primary focus:outline-none placeholder:text-xs placeholder:lg:text-sm bg-transparent;
+}
+
+.custom-select {
+  @apply border-gray-300 select focus:border-primary select-sm sm:select-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm bg-transparent;
+}
+
 .horizontal-padding {
   @apply px-4 sm:px-7 md:px-[46px] lg:px-[77px] xl:px-32;
 }
