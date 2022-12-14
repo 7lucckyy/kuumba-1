@@ -1,13 +1,21 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import ServicesArrow from "../../../shared/components/ServicesArrow";
+import { motion } from "framer-motion";
+import horizontalSliderVariant from "../../../shared/animations/horizontal_slider_variant";
 
 interface HomeServicesProps {}
 
 const HomeServices: FunctionComponent<HomeServicesProps> = () => {
   return (
-    <section className="bg-[#0C1B3A] text-white flex flex-col lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6 md:p-10 lg:p-16 rounded-2xl">
-      <div className="flex items-start gap-3">
+    <motion.section className="bg-[#0C1B3A] text-white flex flex-col lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6 md:p-10 lg:p-16 rounded-2xl">
+      <motion.div
+        className="flex items-start gap-3"
+        custom={0}
+        variants={horizontalSliderVariant}
+        initial="initial"
+        whileInView="animate"
+      >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image
             src="/img/read2earn.svg"
@@ -22,9 +30,23 @@ const HomeServices: FunctionComponent<HomeServicesProps> = () => {
             Earn PEN tokens by reading and supporting other readers
           </p>
         </div>
-      </div>
-      <ServicesArrow />
-      <div className="flex items-start gap-3">
+      </motion.div>
+      <motion.div
+        className="flex items-center justify-center"
+        custom={1}
+        variants={horizontalSliderVariant}
+        initial="initial"
+        whileInView="animate"
+      >
+        <ServicesArrow />
+      </motion.div>
+      <motion.div
+        className="flex items-start gap-3"
+        custom={2}
+        variants={horizontalSliderVariant}
+        initial="initial"
+        whileInView="animate"
+      >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image
             src="/img/microtransaction.svg"
@@ -42,9 +64,24 @@ const HomeServices: FunctionComponent<HomeServicesProps> = () => {
             read / listened to
           </p>
         </div>
-      </div>
-      <ServicesArrow />
-      <div className="flex items-start gap-3">
+      </motion.div>
+      {/* <ServicesArrow /> */}
+      <motion.div
+        className="flex items-center justify-center"
+        custom={3}
+        variants={horizontalSliderVariant}
+        initial="initial"
+        whileInView="animate"
+      >
+        <ServicesArrow />
+      </motion.div>
+      <motion.div
+        className="flex items-start gap-3"
+        custom={4}
+        variants={horizontalSliderVariant}
+        initial="initial"
+        whileInView="animate"
+      >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image
             src="/img/connect.svg"
@@ -59,9 +96,24 @@ const HomeServices: FunctionComponent<HomeServicesProps> = () => {
             Connect with other readers, authors and publishers
           </p>
         </div>
-      </div>
-      <ServicesArrow />
-      <div className="flex items-start gap-3">
+      </motion.div>
+      {/* <ServicesArrow /> */}
+      <motion.div
+        className="flex items-center justify-center"
+        custom={5}
+        variants={horizontalSliderVariant}
+        initial="initial"
+        whileInView="animate"
+      >
+        <ServicesArrow />
+      </motion.div>
+      <motion.div
+        className="flex items-start gap-3"
+        custom={6}
+        variants={horizontalSliderVariant}
+        initial="initial"
+        whileInView="animate"
+      >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image
             src="/img/nft_ebooks.svg"
@@ -76,8 +128,8 @@ const HomeServices: FunctionComponent<HomeServicesProps> = () => {
             Generate lifetime royalties, own eBooks and audiobooks
           </p>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

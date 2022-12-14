@@ -6,9 +6,8 @@ interface HomeSomethingBiggerProps {}
 
 const HomeSomethingBigger: FunctionComponent<HomeSomethingBiggerProps> = () => {
   return (
-    <section className="flex flex-col gap-10 lg:flex-row sm:gap-16 md:gap-24 lg:gap-32 xl:gap-36">
-      <div className="bg-[#F5F6FF] rounded-2xl w-full"></div>
-      <div className="flex flex-col w-full gap-4">
+    <section className="flex flex-col gap-4 lg:items-center sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24 lg:flex-row">
+      <div className="flex flex-col w-full gap-4 basis-1/2">
         <h4 className="font-semibold header4">
           Become part of something bigger than yourself
         </h4>
@@ -32,6 +31,14 @@ const HomeSomethingBigger: FunctionComponent<HomeSomethingBiggerProps> = () => {
             </span>
           </div>
         </div>
+      </div>
+      <div className="w-full basis-1/2">
+        <Image
+          src="/img/home_something_bigger_mockups.svg"
+          alt="Iphone mockups from home something bigger section"
+          width={750}
+          height={750}
+        />
       </div>
     </section>
   );

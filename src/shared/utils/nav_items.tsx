@@ -7,7 +7,7 @@ import { FaCogs } from "react-icons/fa";
 const navItems: INavItem[] = [
   {
     title: "About Us",
-    route: Routes.ABOUT_US,
+    route: "/#about-us",
     icon: <FcAbout className="text-3xl" />,
   },
   {
@@ -17,7 +17,7 @@ const navItems: INavItem[] = [
   },
   {
     title: "Contact Us",
-    route: Routes.CONTACT_US,
+    route: '/#contact-us',
     icon: <GrContactInfo className="text-3xl" />,
   },
 ];

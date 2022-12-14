@@ -5,13 +5,13 @@ interface HomeRoadMapProps {}
 
 const HomeRoadMap: FunctionComponent<HomeRoadMapProps> = () => {
   return (
-    <section className="flex flex-col gap-16">
+    <section className="flex flex-col gap-8 sm:gap-12 md:gap-14 lg:gap-16">
       <div className="text-center">
         <h2 className="mb-3 font-bold sm:mb-4 md:mb-5 lg:mb-6 header2">
           Roadmap
         </h2>
         <span className="text-gray-800 header6">
-          We are still in the idea phase and still developing our road
+          We are still in the idea phase and still developing our roadmap
         </span>
       </div>
       <div className="flex flex-wrap justify-center gap-4 xl:flex-nowrap md:gap-6 lg:gap-8">

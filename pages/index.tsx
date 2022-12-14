@@ -22,9 +22,11 @@ const Home: NextPage = () => {
           <HomeHero />
           <HomeServices />
           <MissionAndAim />
-          <HomeMicrotransaction />
-          <HomeBookSharing />
-          <HomeSomethingBigger />
+          <div className="flex flex-col gap-6">
+            <HomeMicrotransaction />
+            <HomeBookSharing />
+            <HomeSomethingBigger />
+          </div>
           <HomeRoadMap />
           <ContactUsForm />
           <PageBottomSubscribe />

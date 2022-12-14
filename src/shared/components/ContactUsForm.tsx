@@ -22,7 +22,7 @@ const ContactUsForm: FunctionComponent<ContactUsFormProps> = () => {
   };
 
   return (
-    <section className="flex items-center lg:gap-20">
+    <section id="contact-us" className="flex items-center lg:gap-20">
       <div className="relative lg:basis-1/2 aspect-square">
         <Image alt="" src="/img/contact_us_form.svg" layout="fill" />
       </div>
@@ -65,7 +65,7 @@ const ContactUsForm: FunctionComponent<ContactUsFormProps> = () => {
               maxLength={150}
             ></textarea>
             <span className="absolute text-gray-400 bottom-2 right-2 small-base">
-              Characters: {150 - (watch('message')?.length || 0)} left
+              Characters: {150 - (watch("message")?.length || 0)} left
             </span>
           </div>
           {errors.message?.message && (
@@ -85,12 +85,9 @@ const ContactUsForm: FunctionComponent<ContactUsFormProps> = () => {
             className={`w-full custom-select ${
               errors.message_sender && "!border-error"
             }`}
-            defaultValue="pick"
+            defaultValue="reader"
             {...register("message_sender")}
           >
-            <option disabled value="pick">
-              Pick one
-            </option>
             <option value="reader">Reader</option>
             <option value="author">Author</option>
             <option value="publisher">Publisher</option>

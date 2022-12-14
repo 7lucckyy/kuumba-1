@@ -5,6 +5,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useDrawerContext } from "../contexts/DrawerContext";
 import Logo from "./Logo";
 import navItems from "../utils/nav_items";
+import { motion } from "framer-motion";
+import horizontalSliderVariant from "../animations/horizontal_slider_variant";
 
 interface HeaderProps {}
 
@@ -22,19 +24,42 @@ const Header: FunctionComponent<HeaderProps> = () => {
         <div className="items-center hidden gap-6 lg:flex">
           {navItems.map((link, index) => (
             <Link key={index} href={link.route}>
-              <a className="text-gray-500 hover:text-info">{link.title}</a>
+              <motion.a
+                className="text-gray-500 hover:text-info"
+                custom={index}
+                variants={horizontalSliderVariant}
+                initial="initial"
+                whileInView="animate"
+                // animate="animate"
+              >
+                {link.title}
+              </motion.a>
             </Link>
           ))}
         </div>
         <div className="items-center hidden gap-6 lg:flex">
           <Link href={Routes.PUBLISH}>
-            <a className="btn btn-accent hover:text-primary-content body-medium">
+            <motion.a
+              className="btn btn-accent hover:text-primary-content body-medium"
+              custom={0}
+              variants={horizontalSliderVariant}
+              initial="initial"
+              whileInView="animate"
+              // animate="animate"
+            >
               Publish
-            </a>
+            </motion.a>
           </Link>
-          <button className="btn btn-primary body-medium">
+          <motion.button
+            className="btn btn-primary body-medium"
+            custom={1}
+            variants={horizontalSliderVariant}
+            initial="initial"
+            whileInView="animate"
+            // animate="animate"
+          >
             Request early access
-          </button>
+          </motion.button>
         </div>
       </div>
     </header>

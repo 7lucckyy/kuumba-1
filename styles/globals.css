@@ -16,6 +16,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -77,7 +81,7 @@ a {
 }
 
 .small-medium {
-  @apply text-xs lg:text-sm font-medium;
+  @apply text-xs font-medium lg:text-sm;
 }
 
 .tiny {
@@ -89,21 +93,21 @@ a {
 }
 
 .custom-input {
-  @apply border-gray-300 input focus:border-primary input-sm sm:input-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm bg-transparent;
+  @apply bg-transparent border-gray-300 input focus:border-primary input-sm sm:input-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm;
 }
 
 .custom-textarea {
-  @apply h-24 border-gray-300 textarea focus:border-primary focus:outline-none placeholder:text-xs placeholder:lg:text-sm bg-transparent;
+  @apply h-24 bg-transparent border-gray-300 textarea focus:border-primary focus:outline-none placeholder:text-xs placeholder:lg:text-sm;
 }
 
 .custom-select {
-  @apply border-gray-300 select focus:border-primary select-sm sm:select-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm bg-transparent;
+  @apply bg-transparent border-gray-300 select focus:border-primary select-sm sm:select-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm;
 }
 
 .horizontal-padding {
-  @apply px-4 sm:px-7 md:px-[46px] lg:px-[77px] xl:px-32;
+  @apply px-4 sm:px-7 md:px-9 lg:px-16 xl:px-20;
 }
 
 .horizontal-margin {
-  @apply -mx-4 sm:-mx-7 md:-mx-[46px] lg:-mx-[77px] xl:-mx-32;
+  @apply -mx-4 sm:-mx-7 md:-mx-9 lg:-mx-16 xl:-mx-20;
 }
