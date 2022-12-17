@@ -2,19 +2,24 @@ import { FunctionComponent } from "react";
 import Image from "next/image";
 import ServicesArrow from "../../../shared/components/ServicesArrow";
 import { motion } from "framer-motion";
-import horizontalSliderVariant from "../../../shared/animations/horizontal_slider_variant";
+import horizontalSliderList from "../../../shared/animations/horizontal_slider_list";
+import horizontalSliderItem from "../../../shared/animations/horizontal_slider_item";
 
 interface HomeServicesProps {}
 
 const HomeServices: FunctionComponent<HomeServicesProps> = () => {
   return (
-    <motion.section className="bg-[#0C1B3A] text-white flex flex-col lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6 md:p-10 lg:p-16 rounded-2xl">
+    <motion.section
+      className="bg-[#0C1B3A] text-white flex flex-col lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6 md:p-10 lg:p-16 rounded-2xl"
+      variants={horizontalSliderList}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
       <motion.div
         className="flex items-start gap-3"
         custom={0}
-        variants={horizontalSliderVariant}
-        initial="initial"
-        whileInView="animate"
+        variants={horizontalSliderItem}
       >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image
@@ -34,18 +39,14 @@ const HomeServices: FunctionComponent<HomeServicesProps> = () => {
       <motion.div
         className="flex items-center justify-center"
         custom={1}
-        variants={horizontalSliderVariant}
-        initial="initial"
-        whileInView="animate"
+        variants={horizontalSliderItem}
       >
         <ServicesArrow />
       </motion.div>
       <motion.div
         className="flex items-start gap-3"
         custom={2}
-        variants={horizontalSliderVariant}
-        initial="initial"
-        whileInView="animate"
+        variants={horizontalSliderItem}
       >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image
@@ -65,22 +66,17 @@ const HomeServices: FunctionComponent<HomeServicesProps> = () => {
           </p>
         </div>
       </motion.div>
-      {/* <ServicesArrow /> */}
       <motion.div
         className="flex items-center justify-center"
         custom={3}
-        variants={horizontalSliderVariant}
-        initial="initial"
-        whileInView="animate"
+        variants={horizontalSliderItem}
       >
         <ServicesArrow />
       </motion.div>
       <motion.div
         className="flex items-start gap-3"
         custom={4}
-        variants={horizontalSliderVariant}
-        initial="initial"
-        whileInView="animate"
+        variants={horizontalSliderItem}
       >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image
@@ -97,22 +93,17 @@ const HomeServices: FunctionComponent<HomeServicesProps> = () => {
           </p>
         </div>
       </motion.div>
-      {/* <ServicesArrow /> */}
       <motion.div
         className="flex items-center justify-center"
         custom={5}
-        variants={horizontalSliderVariant}
-        initial="initial"
-        whileInView="animate"
+        variants={horizontalSliderItem}
       >
         <ServicesArrow />
       </motion.div>
       <motion.div
         className="flex items-start gap-3"
         custom={6}
-        variants={horizontalSliderVariant}
-        initial="initial"
-        whileInView="animate"
+        variants={horizontalSliderItem}
       >
         <div className="max-w-[12px] sm:min-w-[16px] md:min-w-[20px]">
           <Image

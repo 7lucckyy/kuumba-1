@@ -6,7 +6,8 @@ import { useDrawerContext } from "../contexts/DrawerContext";
 import Logo from "./Logo";
 import navItems from "../utils/nav_items";
 import { motion } from "framer-motion";
-import horizontalSliderVariant from "../animations/horizontal_slider_variant";
+import horizontalSliderList from "../animations/horizontal_slider_list";
+import horizontalSliderItem from "../animations/horizontal_slider_item";
 
 interface HeaderProps {}
 
@@ -21,31 +22,35 @@ const Header: FunctionComponent<HeaderProps> = () => {
           onClick={toggleDrawer}
         />
         <Logo />
-        <div className="items-center hidden gap-6 lg:flex">
+        <motion.div
+          className="items-center hidden gap-6 lg:flex"
+          variants={horizontalSliderList}
+          initial="initial"
+          animate="animate"
+        >
           {navItems.map((link, index) => (
             <Link key={index} href={link.route}>
               <motion.a
                 className="text-gray-500 hover:text-info"
                 custom={index}
-                variants={horizontalSliderVariant}
-                initial="initial"
-                whileInView="animate"
-                // animate="animate"
+                variants={horizontalSliderItem}
               >
                 {link.title}
               </motion.a>
             </Link>
           ))}
-        </div>
-        <div className="items-center hidden gap-6 lg:flex">
+        </motion.div>
+        <motion.div
+          className="items-center hidden gap-6 lg:flex"
+          variants={horizontalSliderList}
+          initial="initial"
+          animate="animate"
+        >
           <Link href={Routes.PUBLISH}>
             <motion.a
               className="btn btn-accent hover:text-primary-content body-medium"
               custom={0}
-              variants={horizontalSliderVariant}
-              initial="initial"
-              whileInView="animate"
-              // animate="animate"
+              variants={horizontalSliderItem}
             >
               Publish
             </motion.a>
@@ -53,14 +58,11 @@ const Header: FunctionComponent<HeaderProps> = () => {
           <motion.button
             className="btn btn-primary body-medium"
             custom={1}
-            variants={horizontalSliderVariant}
-            initial="initial"
-            whileInView="animate"
-            // animate="animate"
+            variants={horizontalSliderItem}
           >
             Request early access
           </motion.button>
-        </div>
+        </motion.div>
       </div>
     </header>
   );

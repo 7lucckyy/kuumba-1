@@ -4,6 +4,10 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IContactUs } from "../types/interfaces";
 import contactUsSchema from "../schemas/contactUsSchema";
+import { motion } from "framer-motion";
+import transitionToRight from "../animations/transition_to_right";
+import transitionToLeft from "../animations/transition_to_left";
+import transitionHorizontal from "../animations/transition_horizontal";
 
 interface ContactUsFormProps {}
 
@@ -22,13 +26,26 @@ const ContactUsForm: FunctionComponent<ContactUsFormProps> = () => {
   };
 
   return (
-    <section id="contact-us" className="flex items-center lg:gap-20">
-      <div className="relative lg:basis-1/2 aspect-square">
-        <Image alt="" src="/img/contact_us_form.svg" layout="fill" />
-      </div>
-      <form
+    <motion.section
+      id="contact-us"
+      className="flex items-center lg:gap-20"
+      variants={transitionHorizontal}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
+      <motion.div
+        className="relative lg:basis-1/2 aspect-square"
+        custom={180}
+        variants={transitionToRight}
+      >
+        <Image alt="Contact us" src="/img/contact_us_form.svg" layout="fill" />
+      </motion.div>
+      <motion.form
         className="flex flex-col w-full gap-6 rounded-lg lg:p-8 lg:bg-white lg:drop-shadow-md lg:backdrop-blur-xl basis-full lg:basis-1/2"
         onSubmit={handleSubmit(onSubmit)}
+        custom={180}
+        variants={transitionToLeft}
       >
         <div className="w-full form-control">
           <label className="label">
@@ -107,8 +124,8 @@ const ContactUsForm: FunctionComponent<ContactUsFormProps> = () => {
         >
           Submit
         </button>
-      </form>
-    </section>
+      </motion.form>
+    </motion.section>
   );
 };
 
