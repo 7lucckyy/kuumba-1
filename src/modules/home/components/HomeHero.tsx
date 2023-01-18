@@ -66,6 +66,7 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
             alt="Iphone mockups light source"
             width={75}
             height={45}
+            priority
           />
         </span>
         <Image
@@ -73,6 +74,7 @@ const HomeHero: FunctionComponent<HomeHeroProps> = () => {
           alt="Iphone mockups from home hero section"
           width={550}
           height={550}
+          priority
         />
       </div>
     </section>

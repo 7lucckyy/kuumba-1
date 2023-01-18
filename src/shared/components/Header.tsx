@@ -12,7 +12,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
 
   return (
     <header className="shadow horizontal-padding horizontal-margin shadow-gray-200">
-      <div className="flex justify-between py-4">
+      <div className="flex flex-row-reverse lg:flex-row justify-between py-4">
         <GiHamburgerMenu
           className="inline-block text-3xl cursor-pointer lg:hidden"
           onClick={toggleDrawer}

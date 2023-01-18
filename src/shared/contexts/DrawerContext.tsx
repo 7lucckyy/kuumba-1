@@ -37,7 +37,7 @@ const DrawerContextProvider: FunctionComponent<PropsWithChildren> = ({
         open={isOpen}
         onClose={toggleDrawer}
         size={240}
-        direction="left"
+        direction="right"
         className="hide-drawer"
       >
         <div className="flex flex-col gap-6">
