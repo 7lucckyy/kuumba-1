@@ -6,7 +6,7 @@ import React, {
     InputHTMLAttributes,
     FC
 } from "react";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
+import MailchimpSubscribe, { EmailFormFields, FormHooks } from "react-mailchimp-subscribe";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	label: string;
@@ -49,7 +49,7 @@ function InputField({
 	);
 }
 
-function CustomForm({ status, message, onValidated }) {
+function CustomForm({ status, message, onValidated }:MailchimpFormProps) {
     const messageSent = status === "success"
 	const reducer = (
 		state: Form,
@@ -110,13 +110,13 @@ function CustomForm({ status, message, onValidated }) {
 			{status === "error" && (
 				<div
 					className="mc__alert mc__alert--error"
-					dangerouslySetInnerHTML={{ __html: message }}
+					dangerouslySetInnerHTML={{ __html: message as string }}
 				/>
 			)}
 			{messageSent && (
 				<div
 					className="text-center"
-					dangerouslySetInnerHTML={{ __html: message }}
+					dangerouslySetInnerHTML={{ __html: message as string }}
 				/>
 			)}
 
@@ -167,6 +167,12 @@ function CustomForm({ status, message, onValidated }) {
 	);
 }
 
+type MailchimpFormProps = {
+	message: string | Error | null
+	status: "success" | "error" | "sending" | null
+	onValidated: (data: EmailFormFields & { MERGE1: string; MERGE2: string }) => void
+}
+
 function MailchimpForm() {
 	const url = `https://gmail.us10.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
     
@@ -174,11 +180,11 @@ function MailchimpForm() {
 		<div className="bg-[#EEEEE] mx-auto w-full max-w-[560px]">
 			<MailchimpSubscribe
 				url={url}
-				render={({ subscribe, status, message }) => (
+				render={({ subscribe, status, message }:FormHooks<EmailFormFields>) => (
 					<CustomForm
 						status={status}
 						message={message}
-						onValidated={(formData) => subscribe(formData)}
+						onValidated={(formData: EmailFormFields) => subscribe(formData)}
 					/>
 				)}
 			/>
