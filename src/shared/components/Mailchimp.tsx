@@ -1,3 +1,4 @@
+import { spawn } from "child_process";
 import React, {
 	useState,
 	useEffect,
@@ -49,7 +50,7 @@ function InputField({
 }
 
 function CustomForm({ status, message, onValidated }) {
-    
+    const messageSent = status === "success"
 	const reducer = (
 		state: Form,
 		action: { payload: string; type: string }
@@ -75,6 +76,7 @@ function CustomForm({ status, message, onValidated }) {
 		firstName: "",
 		lastName: "",
 	});
+	const isValidForm = email && firstName && lastName
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
@@ -103,28 +105,22 @@ function CustomForm({ status, message, onValidated }) {
 	return (
 		<form className="mt-7 px-5 py-[34px] bg-white" onSubmit={(e) => handleSubmit(e)}>
 			<h3 className="text-[#333333] text-sm mb-[14px]">
-				{status === "success"
-					? "Success!"
-					: "Join our email list for future updates."}
+				{!messageSent && "Join our email list for future updates."}
 			</h3>
-
-			{status === "sending" && (
-				<div className="mc__alert mc__alert--sending">Sending...</div>
-			)}
 			{status === "error" && (
 				<div
 					className="mc__alert mc__alert--error"
 					dangerouslySetInnerHTML={{ __html: message }}
 				/>
 			)}
-			{status === "success" && (
+			{messageSent && (
 				<div
-					className="mc__alert mc__alert--success"
+					className="text-center"
 					dangerouslySetInnerHTML={{ __html: message }}
 				/>
 			)}
 
-			{status !== "success" ? (
+			{!messageSent ? (
 				<div className="mc__field-container">
 					<InputField
 						label="First Name"
@@ -159,11 +155,14 @@ function CustomForm({ status, message, onValidated }) {
 			) : null}
 
 			{/*Close button appears if form was successfully sent*/}
-			{status === "success" ? (
-				<button type="submit" className="bg-[#5d5d5d] py-3 px-8 text-white mt-[30px] text-sm">Close</button>
-			) : (
-				<button type="submit" className="bg-[#5d5d5d] py-3 px-8 text-white mt-[30px] text-sm">Subscribe</button>
-			)}
+			{!messageSent &&
+				<button type="submit" className={`${isValidForm ? "bg-[#4169E1]": "bg-[#4169E1]/60"} py-3 px-8 text-white mt-[30px] text-sm`} disabled={status === "sending"}>
+					{status === "sending" ? (
+					<span className="mc__alert mc__alert--sending">Sending...</span>
+					):
+					<span>Subscribe</span>}
+				</button>
+			}
 		</form>
 	);
 }
@@ -173,9 +172,6 @@ function MailchimpForm() {
     
 	return (
 		<div className="bg-[#EEEEE] mx-auto w-full max-w-[560px]">
-            <h3 className="text-[32px] leading-[30px] font-mono font-bold">
-              <span className="text-[#7077F8]">K</span>
-                <span>uumba.</span></h3>
 			<MailchimpSubscribe
 				url={url}
 				render={({ subscribe, status, message }) => (

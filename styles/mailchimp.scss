@@ -5,15 +5,9 @@
   /* If "sending" this will animate the text.*/
   /* Keyframes for this will be included below.*/
   &--sending {
-    color: #00B7BD;
+    color: white;
     -webkit-animation: fade-loop 0.8s ease-in-out infinite alternate-reverse both;
     animation: fade-loop 0.8s ease-in-out infinite alternate-reverse both;
-  }
-
-  /* "success" status styles with text color */
-  &--success {
-    color: #D6C089;
-    margin-top: -60px;
   }
 
   /* "error" status styles*/
