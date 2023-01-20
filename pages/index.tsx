@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import HomeBookSharing from "../src/modules/home/components/HomeBookSharing";
 import HomeHero from "../src/modules/home/components/HomeHero";
 import HomeMicrotransaction from "../src/modules/home/components/HomeMicrotransaction";
@@ -29,3 +29,10 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+
+export const getStaticProps: GetStaticProps = (context) => {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}

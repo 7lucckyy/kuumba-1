@@ -1,6 +1,9 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion"
+
 import Bullet from "../../../shared/components/Bullet";
+import { list, item as variantItem } from "../../../shared/constants/framer-motion-variants";
 
 interface HomeBookSharingProps {}
 
@@ -13,24 +16,15 @@ const HomeBookSharing: FunctionComponent<HomeBookSharingProps> = () => {
           Want to read a book, but don&apos;t have access to it? Why don&apos;t
           you ask your fellow bookmongers.
         </p>
-        <div className="flex flex-col gap-4 mt-4 text-gray-500 md:gap-6 xl:gap-8 sm:mt-6 md:mt-8 xl:mt-10">
-          <div className="flex gap-3">
-            <Bullet />
-            <span className="header6">Borrow</span>
-          </div>
-          <div className="flex gap-3">
-            <Bullet />
-            <span className="header6">Lend</span>
-          </div>
-          <div className="flex gap-3">
-            <Bullet />
-            <span className="header6">Crowdfund</span>
-          </div>
-          <div className="flex gap-3">
-            <Bullet />
-            <span className="header6">Read and elevate</span>
-          </div>
-        </div>
+        <motion.div initial="stop"whileInView="start" variants={list} viewport={{ once: true, amount: 0.8 }} className="flex flex-col gap-4 mt-4 text-gray-500 md:gap-6 xl:gap-8 sm:mt-6 md:mt-8 xl:mt-10">
+        {["Borrow", "Lend", "Crowdfund", "Read and elevate"]
+          .map(item => (
+              <motion.div variants={variantItem} key={item} className="flex gap-3">
+                <Bullet />
+                <span className="header6">{item}</span>
+              </motion.div>
+          ))}
+        </motion.div>
       </div>
       <div className="bg-[#F5F6FF] rounded-2xl w-full"></div>
     </section>

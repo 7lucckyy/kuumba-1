@@ -1,6 +1,8 @@
 import { FunctionComponent } from "react";
-import Image from "next/image";
+import { motion } from "framer-motion"
+
 import Bullet from "../../../shared/components/Bullet";
+import { list, item as variantItem } from "../../../shared/constants/framer-motion-variants";
 
 interface HomeSomethingBiggerProps {}
 
@@ -16,22 +18,15 @@ const HomeSomethingBigger: FunctionComponent<HomeSomethingBiggerProps> = () => {
           Tune into exclusive podcasts created by your favorite creators around
           the globe and connect with readers around the globe
         </p>
-        <div className="flex flex-col gap-4 mt-4 text-gray-500 md:gap-6 xl:gap-8 sm:mt-6 md:mt-8 xl:mt-10">
-          <div className="flex gap-3">
-            <Bullet />
-            <span className="header6">Connect in realtime dialogue</span>
-          </div>
-          <div className="flex gap-3">
-            <Bullet />
-            <span className="header6">Learn new things</span>
-          </div>
-          <div className="flex gap-3">
-            <Bullet />
-            <span className="header6">
-              Become part of something bigger than yourself
-            </span>
-          </div>
-        </div>
+        <motion.div initial="stop"whileInView="start" variants={list} viewport={{ once: true, amount: 0.8 }} className="flex flex-col gap-4 mt-4 text-gray-500 md:gap-6 xl:gap-8 sm:mt-6 md:mt-8 xl:mt-10">
+          {["Connect in realtime dialogue", "Learn new things", "Become part of something bigger than yourself"]
+          .map(item => (
+              <motion.div variants={variantItem} key={item} className="flex gap-3">
+                <Bullet />
+                <span className="header6">{item}</span>
+              </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

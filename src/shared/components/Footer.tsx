@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import MailchimpForm from "./Mailchimp";
+import MailchimpForm from "./Mailchimp/Mailchimp";
 
 interface FooterProps {}
 

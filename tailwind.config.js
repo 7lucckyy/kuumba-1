@@ -5,6 +5,7 @@ module.exports = {
     "./src/shared/components/*.tsx",
     "./src/shared/contexts/*.tsx",
     "./src/modules/**/*.tsx",
+    "./src/shared/**/*.tsx",
   ],
   theme: {
     extend: {
