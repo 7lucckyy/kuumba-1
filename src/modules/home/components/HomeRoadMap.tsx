@@ -58,11 +58,11 @@ const HomeRoadMap: FunctionComponent<HomeRoadMapProps> = () => {
             </div>
             <div className="flex gap-3">
               <Bullet />
-              <span className="header6">Prototyping</span>
+              <span className="header6">Design</span>
             </div>
             <div className="flex gap-3">
               <Bullet />
-              <span className="header6">Design</span>
+              <span className="header6">Prototyping</span>
             </div>
           </div>
         </motion.div>

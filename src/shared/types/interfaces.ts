@@ -22,3 +22,9 @@ export interface IContactUs {
   message: string;
   message_sender: string;
 }
+
+export interface IHomeService {
+  title: string;
+  imageUrl: string;
+  description: string;
+}

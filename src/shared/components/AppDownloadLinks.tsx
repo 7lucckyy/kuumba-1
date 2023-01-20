@@ -21,7 +21,7 @@ const AppDownloadLinks: FunctionComponent<AppDownloadLinksProps> = () => {
         variants={horizontalSliderItem}
       >
         <Image
-          src="/img/appstore.svg"
+          src="/img/appstore_coming_soon.svg"
           alt="Appstore download link"
           width={140}
           height={40}
@@ -33,7 +33,7 @@ const AppDownloadLinks: FunctionComponent<AppDownloadLinksProps> = () => {
         variants={horizontalSliderItem}
       >
         <Image
-          src="/img/googleplay.svg"
+          src="/img/googleplay_coming_soon.svg"
           alt="Google Playstore download link"
           width={140}
           height={40}
@@ -44,7 +44,7 @@ const AppDownloadLinks: FunctionComponent<AppDownloadLinksProps> = () => {
         custom={2}
         variants={horizontalSliderItem}
         target="_blank"
-        href="https://www.figma.com/proto/MuwER2UVdd1TxlhxTuZqeS/Kuumba-ebook-mobile-app?node-id=8%3A10&scaling=min-zoom&page-id=1%3A3&starting-point-node-id=8%3A10&show-proto-sidebar=1"
+        href="https://www.figma.com/proto/MuwER2UVdd1TxlhxTuZqeS/Kuumba-ebook-mobile-app?node-id=235%3A1264&scaling=min-zoom&page-id=1%3A3&starting-point-node-id=8%3A10&show-proto-sidebar=1"
       >
         <Image
           src="/img/demo.svg"

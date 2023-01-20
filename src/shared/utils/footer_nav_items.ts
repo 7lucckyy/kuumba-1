@@ -8,11 +8,11 @@ const footerNavItems: INavItem[] = [
   },
   {
     title: "About Us",
-    route: Routes.ABOUT_US,
+    route: '/#about-us',
   },
   {
     title: "Contact Us",
-    route: Routes.CONTACT_US,
+    route: '/#contact-us',
   },
   {
     title: "Terms",

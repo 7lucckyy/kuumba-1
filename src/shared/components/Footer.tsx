@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FunctionComponent } from "react";
@@ -54,11 +55,13 @@ const Footer: FunctionComponent<FooterProps> = () => {
           <motion.div className="flex flex-col gap-3 sm:gap-5">
             <span className="body-medium">Company</span>
             {footerNavItems.slice(1, 3).map((item, index) => (
-              <Link key={index} href={item.route}>
-                <a className="text-gray-500 hover:text-info">
-                  <span>{item.title}</span>
-                </a>
-              </Link>
+              <a
+                className="text-gray-500 hover:text-info"
+                key={index}
+                href={item.route}
+              >
+                <span>{item.title}</span>
+              </a>
             ))}
             <a className="text-gray-500 cursor-pointer hover:text-info">
               <span>Give feedback</span>
@@ -94,7 +97,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
           >
             <Logo />
             <span className="text-center small-base">
-              @2022 Kuumba Inc. All Rights Reserved
+              @{dayjs().year()} Kuumba Inc. All Rights Reserved
             </span>
           </motion.div>
           <motion.div

@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           <HomeHero />
           <HomeServices />
           <MissionAndAim />
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6" id="features">
             <HomeMicrotransaction />
             <HomeBookSharing />
             <HomeSomethingBigger />

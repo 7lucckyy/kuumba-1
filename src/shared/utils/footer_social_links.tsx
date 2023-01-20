@@ -17,7 +17,7 @@ const footerSocialLinks: SocialLink[] = [
   },
   {
     icon: <FaDiscord className="text-xl text-primary" />,
-    route: "https://www.linkedin.com/company/kuumba",
+    route: "https://discord.com/invite/j67DckfM",
   },
   {
     icon: <FaInstagramSquare className="text-xl text-primary" />,

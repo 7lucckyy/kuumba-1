@@ -37,7 +37,7 @@ const DrawerContextProvider: FunctionComponent<PropsWithChildren> = ({
         open={isOpen}
         onClose={toggleDrawer}
         size={240}
-        direction="left"
+        direction="right"
         className="hide-drawer"
         customIdSuffix="-kuumba-mobile-drawer"
       >
@@ -60,10 +60,9 @@ const DrawerContextProvider: FunctionComponent<PropsWithChildren> = ({
 
           <ul className="w-full p-2 menu rounded-box">
             {navItems.map((item, index) => (
-              <li key={index} className="">
+              <li key={index} onClick={toggleDrawer}>
                 <Link href={item.route}>
                   <a className="text-2xl">
-                    {item.icon}
                     <span className="text-xl">{item.title}</span>
                   </a>
                 </Link>
