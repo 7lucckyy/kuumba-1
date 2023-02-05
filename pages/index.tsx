@@ -6,23 +6,32 @@ import HomeRoadMap from "../src/modules/home/components/HomeRoadMap";
 import HomeServices from "../src/modules/home/components/HomeServices";
 import HomeSomethingBigger from "../src/modules/home/components/HomeSomethingBigger";
 import MissionAndAim from "../src/modules/home/components/MissionAndAim";
+import ContactUsForm from "../src/shared/components/ContactUsForm";
 import Footer from "../src/shared/components/Footer";
 import Header from "../src/shared/components/Header";
 import Meta from "../src/shared/components/Meta";
+import PageBottomSubscribe from "../src/shared/components/PageBottomSubscribe";
 
 const Home: NextPage = () => {
   return (
     <Meta title="Kuumba | Home">
-      <div className="flex flex-col w-full gap-16 horizontal-padding sm:gap-24 md:gap-30 lg:gap-36">
+      <div className="w-full horizontal-padding">
         <Header />
-        <HomeHero />
-        <HomeServices />
-        <MissionAndAim />
-        <HomeMicrotransaction />
-        <HomeBookSharing />
-        <HomeSomethingBigger />
-        <HomeRoadMap />
-        <Footer />
+
+        <div className="flex flex-col gap-16 sm:gap-24 md:gap-30 lg:gap-36">
+          <HomeHero />
+          <HomeServices />
+          <MissionAndAim />
+          <div className="flex flex-col gap-6" id="features">
+            <HomeMicrotransaction />
+            <HomeBookSharing />
+            <HomeSomethingBigger />
+          </div>
+          <HomeRoadMap />
+          <ContactUsForm />
+          <PageBottomSubscribe />
+          <Footer />
+        </div>
       </div>
     </Meta>
   );

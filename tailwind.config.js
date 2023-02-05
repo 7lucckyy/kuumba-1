@@ -7,14 +7,7 @@ module.exports = {
     "./src/modules/**/*.tsx",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        Merriweather: ['Merriweather', 'serif'],
-        RobotoSlab: ['Roboto Slab', 'serif'],
-        SofiaSans: ['Sofia Sans Extra Condensed', 'sans-serif'],
-        Kanit: ['Kanit', "sans-serif"]
-      },
-    },
+    extend: {},
   },
   plugins: [require("daisyui")],
   daisyui: {

@@ -1,5 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@400;500;600;700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,8 +6,7 @@
 
 @layer base {
   body {
-    /* font-family: "Poppins", sans-serif; */
-    font-family: 'Roboto Slab', serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
@@ -16,6 +14,11 @@ html,
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -43,19 +46,19 @@ a {
 }
 
 .header1 {
-  @apply text-[40px] md:text-5xl 2xl:text-[56px] font-Kanit;
+  @apply text-[40px] md:text-5xl 2xl:text-[56px];
 }
 
 .header2 {
-  @apply md:text-[41px] text-[35px] 2xl:text-[48px] font-Kanit;
+  @apply md:text-[41px] text-[35px] 2xl:text-[48px];
 }
 
 .header3 {
-  @apply md:text-[34px] text-[29px] 2xl:text-[40px] font-SofiaSans font-bold;
+  @apply md:text-[34px] text-[29px] 2xl:text-[40px];
 }
 
 .header4 {
-  @apply md:text-[27px] text-[23px] 2xl:text-[32px] font-SofiaSans font-medium;
+  @apply md:text-[27px] text-[23px] 2xl:text-[32px];
 }
 
 .header5 {
@@ -79,7 +82,7 @@ a {
 }
 
 .small-medium {
-  @apply text-xs lg:text-sm font-medium;
+  @apply text-xs font-medium lg:text-sm;
 }
 
 .tiny {
@@ -90,10 +93,47 @@ a {
   @apply text-[9px] lg:text-[10px];
 }
 
+.custom-input {
+  @apply bg-transparent border-gray-300 input focus:border-primary input-sm sm:input-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm;
+}
+
+.custom-textarea {
+  @apply h-24 bg-transparent border-gray-300 textarea focus:border-primary focus:outline-none placeholder:text-xs placeholder:lg:text-sm;
+}
+
+.custom-select {
+  @apply bg-transparent border-gray-300 select focus:border-primary select-sm sm:select-md focus:outline-none placeholder:text-xs placeholder:lg:text-sm;
+}
+
 .horizontal-padding {
-  @apply px-4 sm:px-7 md:px-[46px] lg:px-[77px] xl:px-32;
+  @apply px-4 sm:px-7 md:px-9 lg:px-16 xl:px-20;
 }
 
 .horizontal-margin {
-  @apply -mx-4 sm:-mx-7 md:-mx-[46px] lg:-mx-[77px] xl:-mx-32;
+  @apply -mx-4 sm:-mx-7 md:-mx-9 lg:-mx-16 xl:-mx-20;
+}
+
+/* Mailchimp subscription */
+.alert__sending {
+  color: hsl(var(--p) / var(--tw-text-opacity));
+    -webkit-animation: fade-loop 0.8s ease-in-out infinite alternate-reverse both;
+    animation: fade-loop 0.8s ease-in-out infinite alternate-reverse both;
+}
+@-webkit-keyframes fade-loop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    color: white;
+    opacity: 1;
+  }
+}
+@keyframes fade-loop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    color: white;
+    opacity: 1;
+  }
 }

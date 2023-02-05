@@ -7,11 +7,11 @@ import {
 } from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
-import { GrClose, GrFormClose } from "react-icons/gr";
+import {  GrFormClose } from "react-icons/gr";
 import Link from "next/link";
-import navItems from "../utils/nav_items";
 import { IDrawerContext } from "../types/interfaces";
 import Routes from "../constants/routes";
+import navItems from "../utils/nav_items";
 
 const DrawerContext = createContext<IDrawerContext>({
   toggleDrawer: () => {},
@@ -39,6 +39,7 @@ const DrawerContextProvider: FunctionComponent<PropsWithChildren> = ({
         size={240}
         direction="right"
         className="hide-drawer"
+        customIdSuffix="-kuumba-mobile-drawer"
       >
         <div className="flex flex-col gap-6">
           <div className="flex justify-end mb-14">
@@ -59,10 +60,9 @@ const DrawerContextProvider: FunctionComponent<PropsWithChildren> = ({
 
           <ul className="w-full p-2 menu rounded-box">
             {navItems.map((item, index) => (
-              <li key={index} className="">
+              <li key={index} onClick={toggleDrawer}>
                 <Link href={item.route}>
                   <a className="text-2xl">
-                    {/* {item.icon} */}
                     <span className="text-xl">{item.title}</span>
                   </a>
                 </Link>
