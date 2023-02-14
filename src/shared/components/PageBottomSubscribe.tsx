@@ -1,12 +1,30 @@
 import { FunctionComponent } from "react";
 import { motion } from "framer-motion";
+import transitionToLeft from "../animations/transition_to_left";
 import transitionToRight from "../animations/transition_to_right";
 import transitionHorizontal from "../animations/transition_horizontal";
 import MailchimpForm from "./Mailchimp";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { INewsletter } from "../types/interfaces";
+import newsletterSchema from "../schemas/newsletterSchema";
 
 interface PageBottomSubscribeProps {}
 
 const PageBottomSubscribe: FunctionComponent<PageBottomSubscribeProps> = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<INewsletter>({
+    resolver: yupResolver(newsletterSchema),
+  });
+
+  const onSubmit: SubmitHandler<INewsletter> = async (data) => {
+    console.log(data);
+    reset();
+  };
 
   return (
     <motion.section
@@ -27,6 +45,37 @@ const PageBottomSubscribe: FunctionComponent<PageBottomSubscribeProps> = () => {
           </p>
         </motion.div>
         <MailchimpForm/>
+        
+        <motion.form
+          className="flex flex-wrap justify-center gap-6 mt-10"
+          onSubmit={handleSubmit(onSubmit)}
+          custom={360}
+          variants={transitionToLeft}
+        >
+          <div className="w-full max-w-xs form-control">
+            <input
+              type="text"
+              placeholder="Enter your email address"
+              className={`w-full max-w-xs custom-input !rounded-full !bg-base-100 text-base-content ${
+                errors.email && "!border-error !border-2"
+              }`}
+              {...register("email")}
+            />
+            {errors.email?.message && (
+              <label className="label">
+                <span className="label-text-alt text-error">
+                  {errors.email?.message}
+                </span>
+              </label>
+            )}
+          </div>
+          <button
+            type="submit"
+            className="bg-white border-white rounded-full hover:border-primary body-base btn text-primary hover:bg-primary hover:text-white"
+          >
+            Subscribe
+          </button>
+        </motion.form>
       </div>
     </motion.section>
   );

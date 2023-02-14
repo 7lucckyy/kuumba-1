@@ -1,9 +1,8 @@
 import React, { FunctionComponent, useReducer } from "react";
 import Image from "next/image";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import emailjs, {EmailJSResponseStatus} from "@emailjs/browser";
-
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { IContactUs } from "../types/interfaces";
 import contactUsSchema from "../schemas/contactUsSchema";
 import { motion } from "framer-motion";
